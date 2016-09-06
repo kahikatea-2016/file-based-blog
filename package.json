@@ -1,0 +1,20 @@
+{
+  "name": "file-based-blog",
+  "version": "0.1.0",
+  "description": "A blog that uses a file for data storage",
+  "main": "server.js",
+  "scripts": {
+    "test": "tape tests/**/*-test.js"
+  },
+  "keywords": [
+    "blog",
+    "fs",
+    "json"
+  ],
+  "author": "EDA: Kahikatea 2016",
+  "license": "ISC",
+  "devDependencies": {
+    "express": "^4.14.0",
+    "tape": "^4.6.0"
+  }
+}
