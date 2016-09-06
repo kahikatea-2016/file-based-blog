@@ -14,7 +14,10 @@
   "author": "EDA: Kahikatea 2016",
   "license": "ISC",
   "devDependencies": {
-    "express": "^4.14.0",
     "tape": "^4.6.0"
+  },
+  "dependencies": {
+    "express": "^4.14.0",
+    "express-handlebars": "^3.0.0"
   }
 }
