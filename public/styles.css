@@ -1,0 +1,32 @@
+* {
+  font-family: fantasy;
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+
+
+textarea {
+  width: 500px;
+  height: 300px;
+}
+
+input, textarea {
+  display: block;
+  margin: auto;
+  text-align: left;
+}
+
+h1 {
+padding: 20px; 
+}
+
+h2 {
+  font-size: 2em;
+}
+
+.blog {
+  border-style: solid;
+  margin: 20px;
+  padding: 10px;
+}
