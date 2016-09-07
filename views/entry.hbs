@@ -4,6 +4,15 @@
   <title></title>
 </head>
 <body>
-
+<h1>This is my life</h1>
+{{#each entries}}
+<div>
+<h2>{{title}}</h2>
+<em>{{date}}</em>
+<p>{{content}}</p>
+<em>{{author}}</em>
+</div>
+{{/each}}
+<a href="/"><button>GO HOME</button></a>
 </body>
 </html>

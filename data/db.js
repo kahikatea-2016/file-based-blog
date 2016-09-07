@@ -14,8 +14,11 @@ function getTitles (callback) {
 
 }
 
-function getEntry (id) {
-
+function getEntry (callback) {
+  fs.readFile('./data/blog-entries.json', function (err, json) {
+    var blogEntries = JSON.parse(json)
+    callback(null, blogEntries)
+  })
 }
 
 function saveEntry (entry) {

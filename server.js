@@ -13,6 +13,8 @@ app.set('views', path.join(__dirname, 'views'))
 
 // Routes
 app.get('/', routes.getIndex)
+app.get('/posts', routes.getPosts)
+app.get('/newP', routes.newPost)
 
 
 app.listen(PORT, function () {

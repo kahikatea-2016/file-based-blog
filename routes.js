@@ -1,8 +1,10 @@
 var db = require('./data/db')
+var path = require('path')
 
 module.exports = {
   getIndex: getIndex,
-  getEntry: getEntry
+  getPosts: getPosts,
+  newPost: newPost
 }
 
 function getIndex (req, res) {
@@ -12,6 +14,13 @@ function getIndex (req, res) {
   })
 }
 
-function getEntry (req, res) {
+function getPosts (req, res) {
+  db.getEntry(function (err, entries) {
+    var vm = {entries: entries}
+    res.render('entry', vm)
+  })
+  }
 
-}
+function newPost (req, res) {
+    res.sendFile(path.join(__dirname, 'views/new.hbs'))
+  }
