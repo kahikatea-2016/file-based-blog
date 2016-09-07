@@ -11,8 +11,9 @@ app.engine('hbs', hbs())
 app.set('view engine', 'hbs')
 app.set('views', path.join(__dirname, 'views'))
 
-// Routes
 
+// Routes
+app.get('/', routes.getIndex)
 
 
 app.listen(PORT, function () {

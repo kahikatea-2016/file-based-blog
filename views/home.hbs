@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>Our Blog</title>
 </head>
 <body>
-
+  <ul>
+  {{#each entries}}
+<!-- entries is properties of object -->
+    <li><a href="entries/{{id}}">{{title}}</a></li>
+  {{/each}}
+  </ul>
 </body>
 </html>
