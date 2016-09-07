@@ -7,11 +7,21 @@ module.exports = {
 //db files get s te module getTitles which generates callback
 function getIndex (req, res) {
   db.getTitles(function (blogEntries) {
-    var viewsm = {entries: blogEntries}
-    res.render('home', viewsm)
+    var viewModel = {entries: blogEntries}
+    //we created an object from array, var viewsm because res.render can only render object.
+    res.render('home', viewModel)
   })
 }
 
 function getEntry (req, res) {
-//>> code here
+  //console.log(req.params.id)
+  db.getEntry(req.params.id, function (err, blogEntry){
+    if (err){
+      res.send(err)
+    }
+    else {
+      res.render('entry', blogEntry)
+    }
+  })
+
 }

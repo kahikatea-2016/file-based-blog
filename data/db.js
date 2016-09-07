@@ -15,8 +15,16 @@ function getTitles (callback) {
   })
 }
 
-function getEntry (id) {
-
+function getEntry (id, callback) {
+  var file = path.join(__dirname, 'blog-entries.json')
+  fs.readFile(file, function (err, contents)
+    {
+      if (err){
+        callback(err.message)
+      }
+      var blogEntry = JSON.parse(contents)
+      callback(null, blogEntry[id-1])
+  })
 }
 
 function saveEntry (entry) {

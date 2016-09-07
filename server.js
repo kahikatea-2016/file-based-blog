@@ -14,7 +14,12 @@ app.set('views', path.join(__dirname, 'views'))
 
 // Routes
 app.get('/', routes.getIndex)
+//app.get('/', routes.getEntry)
 
+app.get('/entries/:id', routes.getEntry)
+//id defined here, used by routes
+
+app.use(express.static(path.join(__dirname, 'public')))
 
 app.listen(PORT, function () {
   console.log('Listening on port', PORT)
