@@ -1,5 +1,4 @@
 var db = require('./data/db')
-var path = require('path')
 
 module.exports = {
   getIndex: getIndex,
@@ -21,6 +20,17 @@ function getPosts (req, res) {
   })
   }
 
-function newPost (req, res) {
-    res.sendFile(path.join(__dirname, 'views/new.hbs'))
+function newPost(req, res) {
+  var nextPost = {
+    id: "",
+    title: req.body.title,
+    date: req.body.date,
+    author: req.body.author,
+    content: req.body.content
   }
+
+   db.saveEntry(nextPost, function (err) {
+     res.redirect('/')
+   })
+
+}
