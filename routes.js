@@ -2,7 +2,9 @@ var db = require('./data/db')
 
 module.exports = {
   getIndex: getIndex,
-  getEntry: getEntry
+  getEntry: getEntry,
+  postNew: postNew,
+  createBlog: createBlog
 }
 
 function getIndex (req, res) {
@@ -23,4 +25,13 @@ function getEntry (req, res) {
     }
       res.render('entry', blogEntry)
   })
+}
+
+function postNew (req, res) {
+  res.render('new')
+}
+
+function createBlog (req, res) {
+  var title = req.body.title
+  var content = req.body.content
 }

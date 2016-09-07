@@ -33,5 +33,14 @@ function getBlog (id, cb) {
 }
 
 function saveEntry (entry) {
-
+//   fs.writeFile(newFile, newJson, function (err) {
+//     if (!err) {
+//       verifyExists(newFile)
+//     }
+//   })
+// }
+// function verifyExists (newFile) {
+//   fs.exists(newFile, function(exists) {
+//     console.log(newFile, 'exists:', exists)
+// })
 }
