@@ -6,7 +6,10 @@ module.exports = {
 }
 
 function getIndex (req, res) {
-
+  db.getTitles(function (err, entries) {
+    var vm = {entries: entries}
+    res.render('home', vm)
+  })
 }
 
 function getEntry (req, res) {

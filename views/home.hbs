@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>Home</title>
 </head>
 <body>
-
+  <h1>My blog</h1>
+  <ul>
+    {{#each entries}}
+    <li><a href="/entry/{{id}}">{{title}}</a></li>
+    {{/each}}
+  </ul>
 </body>
 </html>

@@ -1,4 +1,5 @@
 var fs = require('fs')
+var path = require('path')
 
 module.exports = {
   getTitles: getTitles,
@@ -6,8 +7,15 @@ module.exports = {
   saveEntry: saveEntry
 }
 
-function getTitles () {
-
+function getTitles (callback) {
+  var file = path.join(__dirname, 'blog-entries.json')
+  fs.readFile(file, function (err, contents) {
+    if (err) {
+      return callback(err)
+    }
+    var entries = JSON.parse(contents)
+    callback(null, entries)
+  })
 }
 
 function getEntry (id) {
