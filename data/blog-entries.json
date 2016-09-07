@@ -1,4 +1,4 @@
-[
+{ "blogsFile": [
   {
     "id": 1,
     "title": "Title of entry 1",
@@ -13,3 +13,4 @@
     "content": "This is the body of the second post."
   }
 ]
+}
