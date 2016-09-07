@@ -3,12 +3,13 @@ var path = require('path')
 
 module.exports = {
   getTitles: getTitles,
-  getEntry: getEntry,
+  getBlog: getBlog,
   saveEntry: saveEntry
 }
 
+var blogsFile = path.join(__dirname, 'blog-entries.json')
+
 function getTitles (cb) {
-  var blogsFile = path.join(__dirname, 'blog-entries.json')
   fs.readFile(blogsFile, function (err, buffer) {
     if (err) {
       return cb(err)
@@ -18,8 +19,17 @@ function getTitles (cb) {
   })
 }
 
-function getEntry (id) {
-
+function getBlog (id, cb) {
+  fs.readFile(blogsFile, function (err, buffer) {
+    if (err) {
+      return cb(err)
+    }
+    var entries = JSON.parse(buffer)
+    var entry = entries.filter(function (item) {
+      return item.id === id
+    })[0]
+    cb(null, entry)
+  })
 }
 
 function saveEntry (entry) {

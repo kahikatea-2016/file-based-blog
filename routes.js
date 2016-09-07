@@ -10,10 +10,17 @@ function getIndex (req, res) {
     if (err) {
       console.error(err.message)
     }
-    res.render('home', data)
+    var vm = {blogsFile: data}
+    res.render('home', vm)
   })
 }
 
 function getEntry (req, res) {
-
+  var id = parseInt(req.params.id)
+  db.getBlog(id, function (err, blogEntry) {
+    if (err) {
+      console.error(err.message)
+    }
+      res.render('entry', blogEntry)
+  })
 }
