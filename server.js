@@ -13,7 +13,7 @@ app.set('views', path.join(__dirname, 'views'))
 
 // Routes
 app.get('/', routes.getIndex)
-
+app.get('/entry/:id', routes.getEntry)
 
 app.listen(PORT, function () {
   console.log('Listening on port', PORT)

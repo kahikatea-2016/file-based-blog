@@ -13,5 +13,11 @@ function getIndex (req, res) {
 }
 
 function getEntry (req, res) {
-
+  var id = Number(req.params.id)
+  db.getEntry(id, function (err, entry) {
+    if (!entry) {
+      return res.sendStatus(404)
+    }
+    res.render('entry', entry)
+  })
 }
