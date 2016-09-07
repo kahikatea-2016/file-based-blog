@@ -6,19 +6,23 @@ module.exports = {
   newPost: newPost
 }
 
-function getIndex (req, res) {
+function getIndex(req, res) {
   db.getTitles(function (err, entries) {
-    var vm = {entries: entries}
+    var vm = {
+      entries: entries
+    }
     res.render('home', vm)
   })
 }
 
-function getPosts (req, res) {
+function getPosts(req, res) {
   db.getEntry(function (err, entries) {
-    var vm = {entries: entries}
+    var vm = {
+      entries: entries
+    }
     res.render('entry', vm)
   })
-  }
+}
 
 function newPost(req, res) {
   var nextPost = {
@@ -28,9 +32,7 @@ function newPost(req, res) {
     author: req.body.author,
     content: req.body.content
   }
-
-   db.saveEntry(nextPost, function (err) {
-     res.redirect('/')
-   })
-
+  db.saveEntry(nextPost, function (err) {
+    res.redirect('/')
+  })
 }

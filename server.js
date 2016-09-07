@@ -19,8 +19,6 @@ app.get('/', routes.getIndex)
 app.get('/posts', routes.getPosts)
 app.post('/new-post', routes.newPost)
 
-
-
 app.listen(PORT, function () {
   console.log('Listening on port', PORT)
 })
