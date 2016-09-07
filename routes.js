@@ -32,6 +32,7 @@ function postNew (req, res) {
 }
 
 function createBlog (req, res) {
-  var title = req.body.title
-  var content = req.body.content
+  db.saveEntry(req.body, function (err) {
+    res.redirect('/')
+  })
 }

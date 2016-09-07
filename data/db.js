@@ -9,7 +9,7 @@ module.exports = {
 
 var blogsFile = path.join(__dirname, 'blog-entries.json')
 
-function getTitles (cb) {
+function getTitles(cb) {
   fs.readFile(blogsFile, function (err, buffer) {
     if (err) {
       return cb(err)
@@ -19,7 +19,7 @@ function getTitles (cb) {
   })
 }
 
-function getBlog (id, cb) {
+function getBlog(id, cb) {
   fs.readFile(blogsFile, function (err, buffer) {
     if (err) {
       return cb(err)
@@ -32,15 +32,24 @@ function getBlog (id, cb) {
   })
 }
 
-function saveEntry (entry) {
-//   fs.writeFile(newFile, newJson, function (err) {
-//     if (!err) {
-//       verifyExists(newFile)
-//     }
-//   })
-// }
-// function verifyExists (newFile) {
-//   fs.exists(newFile, function(exists) {
-//     console.log(newFile, 'exists:', exists)
-// })
+function saveEntry(entry, callback) {
+  // read the file
+  fs.readFile(blogsFile, function (err, buffer) {
+      if (err) {
+        return cd(err)
+      }
+      var entries = JSON.parse(buffer)
+      entry.id = entries.length + 1
+      entries.push(entry)
+      var jsonString = JSON.stringify(entries)
+
+      fs.writeFile(blogsFile, jsonString, function (err) {
+        callback(err)
+        console.log("all done")
+      })
+    })
+    // JSON.parse
+    // push the entry onto entries
+    // JSON.stringify
+    // write the file
 }

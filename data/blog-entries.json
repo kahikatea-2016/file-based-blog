@@ -1,15 +1,25 @@
-[
-  {
+[{
     "id": 1,
     "title": "Title of entry 1",
     "date": "2016-09-07",
     "author": "Sally Stevenson",
     "content": "This is the body of the first post."
-  }, {
+}, {
     "id": 2,
     "title": "Title of entry 2",
     "date": "2016-09-06",
     "author": "Joe Johnson",
     "content": "This is the body of the second post."
-  }
-]
+}, {
+    "id": 3,
+    "title": "New Blog",
+    "date": "2016-09-08",
+    "author": "Sam Tealiie Tim",
+    "content": "sdfgsdfgsdfg"
+}, {
+    "title": "stuff",
+    "date": "things",
+    "author": "bla",
+    "content": "bloop",
+    "id": 4
+}]
