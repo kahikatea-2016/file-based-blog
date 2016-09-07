@@ -1,4 +1,4 @@
-var db = require('./db')
+var db = require('./data/db')
 
 module.exports = {
   getIndex: getIndex,

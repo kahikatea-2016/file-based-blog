@@ -4,7 +4,8 @@
   "description": "A blog that uses a file for data storage",
   "main": "server.js",
   "scripts": {
-    "test": "tape tests/**/*-test.js"
+    "test": "tape tests/**/*-test.js",
+    "start": "node-inspector & nodemon --debug server"
   },
   "keywords": [
     "blog",
@@ -14,6 +15,8 @@
   "author": "EDA: Kahikatea 2016",
   "license": "ISC",
   "devDependencies": {
+    "node-inspector": "^0.12.8",
+    "nodemon": "^1.10.2",
     "tape": "^4.6.0"
   },
   "dependencies": {
