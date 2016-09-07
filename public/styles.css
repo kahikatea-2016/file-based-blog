@@ -33,6 +33,17 @@ button, input.submit {
 
 .blog {
   border-style: solid;
-  margin: 20px;
+  width: 500px;
+  display: block;
+  margin: auto;
+  margin-bottom: 20px;
   padding: 10px;
+  background-color: lavender;
+}
+
+p.about {
+  background-color: lightblue;
+}
+h2, em, p {
+  background-color: lavender;
 }
