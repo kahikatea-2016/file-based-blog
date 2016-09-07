@@ -1,9 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>New blog post</title>
 </head>
 <body>
-
+  <h1>New blog post</h1>
+  <form action="/create" method="post">
+    <div>
+    <label for="title">Title:
+      <input name="title">
+    </label>
+    </div>
+    <div>
+    <label for="content">Content:
+      <textarea name="content"></textarea>
+    </label>
+    </div>
+    <div>
+    <label for="date">Date:
+      <input name="content">
+    </label>
+    </div>
+    <div>
+    <label for="author">Author:
+      <input name="author">
+    </label>
+    </div>
+    <button>Save</button>
 </body>
 </html>

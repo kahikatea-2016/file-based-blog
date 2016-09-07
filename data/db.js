@@ -32,6 +32,13 @@ function getEntry (id, callback) {
   })
 }
 
-function saveEntry (entry) {
-
+function saveEntry (entry, callback) {
+  fs.readFile(file, saveFile)
+  function saveFile (err, contents) {
+    var entries = JSON.parse(contents)
+    entry.id = entries.length + 1
+    entries.push(entry)
+    var json = JSON.stringify(entries)
+    fs.writeFile(file, json, callback)
+  }
 }
