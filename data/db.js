@@ -38,6 +38,7 @@ function saveEntry(entry, callback) {
       if (err) {
         return cd(err)
       }
+
       var entries = JSON.parse(buffer)
       entry.id = entries.length + 1
       entries.push(entry)
