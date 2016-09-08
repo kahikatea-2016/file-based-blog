@@ -5,7 +5,7 @@ var bodyParser = require('body-parser')
 
 var routes = require('./routes')
 
-var PORT = 3000
+var port = process.env.PORT || 3000
 var app = express()
 app.use(bodyParser.urlencoded())
 
