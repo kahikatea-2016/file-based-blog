@@ -2,7 +2,9 @@ var db = require('./data/db')
 //getting database file
 module.exports = {
   getIndex: getIndex,
-  getEntry: getEntry
+  getEntry: getEntry,
+  newEntry: newEntry,
+  saveEntry: saveEntry
 }
 //db files get s te module getTitles which generates callback
 function getIndex (req, res) {
@@ -24,4 +26,20 @@ function getEntry (req, res) {
     }
   })
 
+}
+
+function newEntry (req, res) {
+  res.render('new')
+}
+
+function saveEntry (req, res) {
+  console.log(req.body)
+  db.saveEntry(req.body, function (err) {
+    if (err){
+      res.send(err)
+    }
+    else {
+      res.redirect('/')
+    }
+  })
 }
