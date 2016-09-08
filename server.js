@@ -18,7 +18,7 @@ app.use(express.static('public'))
 app.get('/', routes.getIndex)
 app.get('/entry/:id', routes.getEntry)
 app.get('/new', routes.postNew)
-app.get('/create', routes.createBlog)
+app.post('/create', routes.createBlog)
 
 app.listen(PORT, function () {
   console.log('Listening on port', PORT)
